@@ -1,9 +1,9 @@
 <?php
 
-namespace ErikDubbelboer\LaravelTranslate;
+namespace ErikDubbelboer\LaravelLocalizationHelpers;
 
 
-class LaravelTranslateServiceProvider extends \Illuminate\Support\ServiceProvider {
+class LaravelLocalizationHelpersServiceProvider extends \Illuminate\Support\ServiceProvider {
 
   /**
    * Register the service provider.
@@ -11,8 +11,8 @@ class LaravelTranslateServiceProvider extends \Illuminate\Support\ServiceProvide
    * @return void
    */
   public function register() {
-    $this->app->bind('translation', function($strings) {
-      return new Translation($strings);
+    $this->app->bind('translation', function() {
+      return new Translation();
     });
 
     $app  = $this->app;
@@ -22,7 +22,7 @@ class LaravelTranslateServiceProvider extends \Illuminate\Support\ServiceProvide
       $resolver = $view->getEngineResolver();
       $compiler = $resolver->resolve('blade')->getCompiler();
 
-      return new TranslationEngine($compiler, \Config::get('app.translate.prefix'));
+      return new TranslationEngine($compiler, \Config::get('app.localization.prefix', 'messages'));
     });
   }
 

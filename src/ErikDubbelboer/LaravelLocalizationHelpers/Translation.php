@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ErikDubbelboer\LaravelTranslate;
+namespace ErikDubbelboer\LaravelLocalizationHelpers;
 
 
 class Translation implements \ArrayAccess {
@@ -36,6 +36,6 @@ class Translation implements \ArrayAccess {
       \Log::info('Missing ' . \App::getLocale() . ' translation for: ' . $offset);
     }
 
-    return $offset;
+    return $this->strings[$offset];
   }
 }

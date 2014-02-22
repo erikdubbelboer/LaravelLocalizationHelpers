@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ErikDubbelboer\LaravelTranslate;
+namespace ErikDubbelboer\LaravelLocalizationHelpers;
 
 
 use Illuminate\View\Engines\CompilerEngine;
@@ -10,7 +10,7 @@ use Illuminate\View\Compilers\CompilerInterface;
 
 class TranslationEngine extends CompilerEngine {
   /** @var string */
-  protected $prefix = 'views';
+  protected $prefix = 'messages';
 
 
   public function __construct(CompilerInterface $compiler, $prefix) {
@@ -24,7 +24,7 @@ class TranslationEngine extends CompilerEngine {
     $contents = parent::get($path, $data);
 
     return preg_replace_callback('/{\|([^}]*?)}/', function($match) {
-      return e(trans('flip4coins.' . $match[1]));
+      return e(trans($this->prefix . '.' . trim($match[1])));
     }, $contents);
   }
 }

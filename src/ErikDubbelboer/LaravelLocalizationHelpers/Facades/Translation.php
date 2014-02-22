@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ErikDubbelboer\LaravelTranslate\Facades;
+namespace ErikDubbelboer\LaravelLocalizationHelpers\Facades;
 
 
 use Illuminate\Support\Facades\Facade;
