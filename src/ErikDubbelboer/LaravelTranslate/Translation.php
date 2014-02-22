@@ -33,7 +33,7 @@ class Translation implements \ArrayAccess {
 
   public function offsetGet($offset) {
     if (!isset($this->strings[$offset])) {
-      Log::info('Missing ' . App::getLocale() . ' translation for: ' . $offset);
+      \Log::info('Missing ' . App::getLocale() . ' translation for: ' . $offset);
     }
 
     return $offset;
