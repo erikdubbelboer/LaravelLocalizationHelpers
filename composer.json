@@ -1,6 +1,6 @@
 {
-  "name": "ErikDubbelboer/LaravelTranslate",
-  "description": "Laravel translation helpers",
+  "name": "ErikDubbelboer/LaravelLocalizationHelpers",
+  "description": "Laravel localization helpers",
   "keywords": ["laravel", "translate", "localization", "blade"],
   "license": "MIT",
   "require": {
