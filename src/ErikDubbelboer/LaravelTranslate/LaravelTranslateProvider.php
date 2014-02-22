@@ -3,7 +3,7 @@
 namespace ErikDubbelboer\LaravelTranslate;
 
 
-class LaravelMysqlQueueServiceProvider extends \Illuminate\Support\ServiceProvider {
+class LaravelTranslateServiceProvider extends \Illuminate\Support\ServiceProvider {
 
   /**
    * Register the service provider.

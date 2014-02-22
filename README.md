@@ -1,4 +1,4 @@
-LaravelMysqlQueue
+LaravelTranslate
 =================
 
 Laravel translation helpers.
