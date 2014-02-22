@@ -1,0 +1,14 @@
+{
+  "name": "ErikDubbelboer/LaravelTranslate",
+  "description": "Laravel translation helpers",
+  "keywords": ["laravel", "translate", "localization", "blade"],
+  "license": "MIT",
+  "require": {
+  },
+  "autoload": {
+    "psr-0": {
+      "ErikDubbelboer\\LaravelTranslate\\": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
