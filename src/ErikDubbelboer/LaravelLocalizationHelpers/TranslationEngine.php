@@ -22,9 +22,10 @@ class TranslationEngine extends CompilerEngine {
 
   public function get($path, array $data = array()) {
     $contents = parent::get($path, $data);
+    $prefix   = $this->prefix;
 
-    return preg_replace_callback('/{\|([^}]*?)}/', function($match) {
-      return e(trans($this->prefix . '.' . trim($match[1])));
+    return preg_replace_callback('/{\|([^}]*?)}/', function($match) use ($prefix) {
+      return e(trans($prefix . '.' . trim($match[1])));
     }, $contents);
   }
 }
