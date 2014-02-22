@@ -7,7 +7,7 @@
   },
   "autoload": {
     "psr-0": {
-      "ErikDubbelboer\\LaravelTranslate\\": "src/"
+      "ErikDubbelboer\\LaravelLocalizationHelpers\\": "src/"
     }
   },
   "minimum-stability": "dev"
