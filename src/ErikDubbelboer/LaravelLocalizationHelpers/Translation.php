@@ -24,7 +24,12 @@ class Translation implements \ArrayAccess {
   }
 
   public function offsetExists($offset) {
-    return true;
+    if (isset($this->strings[$offset])) {
+      return true;
+    } else {
+      \Log::info('Missing ' . \App::getLocale() . ' translation for: ' . $offset);
+      return false;
+    }
   }
 
   public function offsetUnset($offset) {
@@ -32,10 +37,11 @@ class Translation implements \ArrayAccess {
   }
 
   public function offsetGet($offset) {
-    if (!isset($this->strings[$offset])) {
+    if (isset($this->strings[$offset])) {
+      return $this->strings[$offset];
+    } else {
       \Log::info('Missing ' . \App::getLocale() . ' translation for: ' . $offset);
+      return $offset;
     }
-
-    return $this->strings[$offset];
   }
 }
